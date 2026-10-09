@@ -13,7 +13,7 @@ public class Task2 {
             char letter = 'H';
             boolean truth = true;
 
-            String output = "H3110 world" + two + " " + truth;
+            String output = "H3110 wOrld" + two + " " + truth;
             System.out.println (output);
         }
     }
