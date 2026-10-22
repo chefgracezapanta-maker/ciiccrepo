@@ -1,1 +1,40 @@
+public class Main {
+    public static void main(String[] args) {
 
+        Animal rabbit = new Animal("Rabbit", true, false);
+
+        // Lambda: Check if the animal can hop
+        CheckTrait hopper = animal -> animal.canHop();
+
+        // Lambda: Check if the animal can swim
+        CheckTrait swimmer = animal -> animal.canSwim();
+
+        System.out.println("Can Rabbit hop? " + hopper.test(rabbit));
+        System.out.println("Can Rabbit swim? " + swimmer.test(rabbit));
+    }
+}
+
+class Animal {
+    String species;
+    boolean canHop;
+    boolean canSwim;
+
+    Animal(String species, boolean canHop, boolean canSwim) {
+        this.species = species;
+        this.canHop = canHop;
+        this.canSwim = canSwim;
+    }
+
+    boolean canHop() {
+        return canHop;
+    }
+
+    boolean canSwim() {
+        return canSwim;
+    }
+}
+
+@FunctionalInterface
+interface CheckTrait {
+    boolean test(Animal animal);
+}
